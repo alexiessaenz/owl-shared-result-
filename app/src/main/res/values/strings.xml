@@ -13,5 +13,7 @@
     <string name="title_owl_trivia_question">OWL Trivia (%1$d/%2$d)</string>
     <string name="About">About</string>
     <string name="rules">Rules</string>
+    <string name="share_success_text">I win the OWL Trivia with %1$d / %2$d</string>
+    <string name="share">Share</string>
 
 </resources>
