@@ -93,12 +93,16 @@ class GameFragment : Fragment() {
                         binding.radioGroupQuestion.clearCheck()
                         binding.invalidateAll()
                     } else {
+                        //view.findNavController()
+                            //.navigate(R.id.action_gameFragment_to_gameWonFragment)
                         view.findNavController()
-                            .navigate(R.id.action_gameFragment_to_gameWonFragment)
+                            .navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment(numQuestions,questionIndex)) //with safe arguments
                     }
                 } else {
+                    //view.findNavController()
+                      //  .navigate(R.id.action_gameFragment_to_gameOverFragment)
                     view.findNavController()
-                        .navigate(R.id.action_gameFragment_to_gameOverFragment)
+                        .navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment()) //with safe arguments
                 }
             }
         }
