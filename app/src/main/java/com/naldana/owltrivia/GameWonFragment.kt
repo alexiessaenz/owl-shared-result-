@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.naldana.owltrivia.databinding.FragmentGameWonBinding
+import timber.log.Timber
 
 /**
  * A simple [Fragment] subclass.
@@ -34,8 +35,9 @@ class GameWonFragment : Fragment() {
         Snackbar.make((container as View),
             "NumCorrect: ${args.numCorrect}," +
                     " NumQuestions: ${args.numQuestions}",
-            Snackbar.LENGTH_LONG).setAction("OK"){
-            Log.d("GameWonFragment","SnackBar")
+            Snackbar.LENGTH_INDEFINITE).setAction("OK"){
+            //Log.d("GameWonFragment","SnackBar")
+            Timber.i("Win action snackbar clicked")
         }.show()
 
         setHasOptionsMenu(true)
