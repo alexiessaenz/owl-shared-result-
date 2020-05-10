@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".GameFragment">
+
+    <data>
+
+        <variable
+            name="game"
+            type="com.naldana.owltrivia.GameFragment" />
+    </data>
+
+    <LinearLayout
+        android:padding="@dimen/margin_wide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/header_image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/owl_reading" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@tools:sample/full_names"
+            style="@style/TextAppearance.MdcTypographyStyles.Headline4"
+            android:text="@{game.currentQuestion.text}"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+
+            <RadioGroup
+                android:id="@+id/radioGroupQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radioOptionA"
+                    style="@style/Widget.MaterialComponents.CompoundButton.RadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:useMaterialThemeColors="false"
+                    tools:checked="true"
+                    android:text="@={game.answers[0]}" />
+
+                <RadioButton
+                    android:id="@+id/radioOptionB"
+                    style="@style/Widget.MaterialComponents.CompoundButton.RadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={game.answers[1]}"/>
+
+                <RadioButton
+                    android:id="@+id/radioOptionC"
+                    style="@style/Widget.MaterialComponents.CompoundButton.RadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={game.answers[2]}" />
+
+                <RadioButton
+                    android:id="@+id/radioOptionD"
+                    style="@style/Widget.MaterialComponents.CompoundButton.RadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={game.answers[3]}" />
+            </RadioGroup>
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_wide"
+            android:layout_marginBottom="@dimen/margin_wide"
+            android:text="@string/text_send" />
+
+    </LinearLayout>
+
+</layout>
